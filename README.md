@@ -1,8 +1,3 @@
-# casa_interiores_project_priv
-Repositório privado da HeinSoft — desenvolvimento interno do projeto Casa Interiores. 
-
----------------------------------------------------------------------------------------
-
 # 🪑 Casa Interiores — Projeto desenvolvido pela HeinSoft
 
 ## 🧱 Cabeçalho e Identificação do Projeto
