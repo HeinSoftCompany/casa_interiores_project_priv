@@ -1,0 +1,20 @@
+.search-wrap { background: var(--paper); border-bottom: 1px solid var(--stroke); }
+
+.search-input {
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  padding: .8rem 1.1rem;
+  width: 100%;
+  &::placeholder { color: var(--muted); }
+}
+
+.btn-icon {
+  width: 42px; height: 42px; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1px solid var(--stroke); background: var(--paper);
+}
+
+.logo {
+  font-weight: 700; letter-spacing: .2px; text-transform: lowercase; color: var(--brand);
+  span { font-weight: 500; }
+}

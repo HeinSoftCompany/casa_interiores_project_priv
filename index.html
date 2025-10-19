@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Casa Interiores Gravatá</title>
+
+    <!-- Bootstrap 5.3 (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- Line Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Onest:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    >
+  </head>
+  <body>
+
+  <!-- Search Wrap -->
+    <div class="search-wrap py-3">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+
+          <!-- LOGO: 1º no mobile, 2º no md+ -->
+          <div class="col-12 col-md-5 d-flex justify-content-center justify-content-md-end align-items-center order-1 order-md-2">
+            <a href="#" class="logo h4 m-0 text-decoration-none reset-home">Casa <span>Interiores</span></a>
+          </div>
+
+          <!-- BUSCA: 2º no mobile, 1º no md+ -->
+          <div class="col-12 col-md-7 order-2 order-md-1">
+            <div class="position-relative">
+              <input class="search-input form-control pe-5" placeholder="O que você está buscando?" />
+              <button class="btn position-absolute top-50 end-0 translate-middle-y me-2 p-0 border-0 bg-transparent">
+                <i class="la la-search fs-4"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories Bar -->
+    <div class="cats-bar">
+      <div class="container">
+        <ul class="nav gap-2 overflow-auto flex-nowrap justify-content-center justify-content-md-end">
+          <li class="nav-item"><a class="nav-link py-3 px-2 px-md-3" href="#moveis-rusticos">Móveis rústicos</a></li>
+          <li class="nav-item"><a class="nav-link py-3 px-2 px-md-3" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link py-3 px-2 px-md-3" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <main class="py-4">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div class="crumbs">Início / <strong>Móveis</strong></div>
+        </div>
+        <h1 class="page-title h2 mb-4">
+          <a href="#" class="text-reset text-decoration-none reset-home">Móveis</a>
+        </h1>
+
+        <div class="row g-4">
+          <!-- ===================== -->
+          <!-- Botão MOBILE (offcanvas) -->
+          <!-- ===================== -->
+          <div class="d-lg-none mb-3">
+            <button class="btn btn-outline-secondary w-100"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileFilters"
+                    aria-controls="mobileFilters">
+              <i class="la la-bars me-2"></i> Categorias
+            </button>
+          </div>
+
+          <!-- ===================== -->
+          <!-- Sidebar DESKTOP -->
+          <!-- ===================== -->
+          <aside class="col-lg-3 sidebar d-none d-lg-block">
+            <div class="side-card mb-3" id="sidebarDesktop">
+              <nav class="small">
+                <div class="sidebar-collapsible" id="catList">
+                  <!-- SUA LISTA DE CATEGORIAS -->
+                  <a class="cat-link" data-cat="arranhadores"  href="#">Aparadores</a>
+                  <a class="cat-link" data-cat="banheiros"     href="#">Armários</a>
+                  <a class="cat-link" data-cat="nichos"        href="#">Bancos</a>
+                  <a class="cat-link" data-cat="passarelas"    href="#">Baús</a>
+                  <a class="cat-link" data-cat="playgrounds"   href="#">Buffets</a>
+                  <a class="cat-link" data-cat="prateleiras"   href="#">Cadeiras</a>
+                  <a class="cat-link" data-cat="redes-e-camas" href="#">Cômodas</a>
+                  <a class="cat-link" data-cat="torres"        href="#">Cristaleiras</a>
+                  <a class="cat-link" data-cat="prateleiras"   href="#">Escrivaninhas</a>
+                  <a class="cat-link" data-cat="redes-e-camas" href="#">Estantes</a>
+                  <a class="cat-link" data-cat="torres"        href="#">Mesas</a>
+                  <a class="cat-link" data-cat="prateleiras"   href="#">Namoradeiras</a>
+                  <a class="cat-link" data-cat="redes-e-camas" href="#">Penteadeira</a>
+                  <a class="cat-link" data-cat="torres"        href="#">Rack</a>
+                </div>
+
+                <a class="sidebar-toggle" href="#"
+                  aria-controls="catList" aria-expanded="false">
+                  <span>Ver mais</span> <i class="la la-angle-down" aria-hidden="true"></i>
+                </a>
+              </nav>
+            </div>
+          </aside>
+
+          <!-- ===================== -->
+          <!-- Offcanvas MOBILE -->
+          <!-- ===================== -->
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileFilters" aria-labelledby="mobileFiltersLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="mobileFiltersLabel">Categorias</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Conteúdo do sidebar será injetado aqui pelo main.js -->
+              <div id="mobileFiltersBody"></div>
+            </div>
+          </div>
+
+          <!-- Grid Products-->
+          <section class="col-lg-9">
+            <div class="row g-3" id="grid">
+              <!-- Produto 1 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-1.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-half-alt"></i>
+                      <span class="text-muted">(16)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre para Gatos Tom Preta</h3>
+                    <div class="price">R$1.839,00</div>
+                    <div class="pix">R$1.747,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 2 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="banheiros">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-2.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(11)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Banheiro Max Marrom – Para Gatos Grandes</h3>
+                    <div class="price">R$1.629,00</div>
+                    <div class="pix">R$1.547,55 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 3 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-3.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i>
+                      <span class="text-muted">(3)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre para Gatos Tom EVO Azul</h3>
+                    <div class="price">R$2.249,00</div>
+                    <div class="pix">10x de R$224,90 sem juros</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 4 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="playgrounds">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-4.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-half-alt"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(7)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Playground Mica para Gatos Grandes</h3>
+                    <div class="price">R$2.010,00</div>
+                    <div class="pix">R$1.909,50 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 5 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="arranhadores">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-5.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star-o"></i><i class="la la-star-o"></i><i class="la la-star-o"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(0)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Arranhador Slim</h3>
+                    <div class="price">R$289,00</div>
+                    <div class="pix">R$274,55 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 6 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 7 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 8 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 9 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 10 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 11 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 12 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 13 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 14 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 15 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 16 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 17 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Produto 18 -->
+              <div class="col-6 col-md-4">
+                <article class="product-card position-relative p-2" data-cat="torres">
+                  <button class="wishlist"><i class="la la-heart-o"></i></button>
+                  <div class="product-media rounded-2xl">
+                    <img src="/assets/prod-6.jpg" class="img-fluid" alt="Produto"/>
+                  </div>
+                  <div class="p-3">
+                    <div class="rating small mb-1">
+                      <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star-o"></i><i class="la la-star-o"></i>
+                      <span class="text-muted">(14)</span>
+                    </div>
+                    <h3 class="product-title h6 mb-1">Torre Modular Light</h3>
+                    <div class="price">R$1.799,00</div>
+                    <div class="pix">R$1.709,05 com Pix</div>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-5 text-center small text-muted">
+  © <span id="year"></span> Casa Interiores. Todos os direitos reservados. <br>
+  Desenvolvido por 
+  <a href="https://heinsoft.com.br" class="fw-semibold text-decoration-none text-muted">
+    HeinSoft Company
+  </a>.
+</footer>
+
+
+
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+
+    <!-- Vite entry -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

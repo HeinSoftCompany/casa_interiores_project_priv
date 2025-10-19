@@ -1,0 +1,29 @@
+.product-card {
+  background: var(--paper);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow);
+  overflow: hidden; height: 100%;
+  position: relative;
+
+  .product-media {
+    background:#f3f3f3;
+    aspect-ratio: 4/5;
+    display:flex; align-items:center; justify-content:center;
+    img { max-width: 100%; height: auto; }
+  }
+
+  .wishlist {
+    position:absolute; right:.75rem; top:.75rem;
+    width:40px; height:40px; border-radius:50%;
+    border:1px solid var(--stroke);
+    display:grid; place-items:center;
+    background:rgba(255,255,255,.9);
+    i { font-size:1.2rem; color:var(--heart); }
+  }
+
+  .product-title { font-weight:600; line-height:1.35; }
+  .rating i { color:var(--rating); }
+  .price { font-weight:700; }
+  .pix { color:var(--muted); font-size:.95rem; }
+}

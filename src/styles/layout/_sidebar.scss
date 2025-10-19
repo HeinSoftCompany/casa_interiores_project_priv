@@ -1,0 +1,121 @@
+/* src/styles/layout/_sidebar.scss */
+.sidebar {
+  position: sticky;
+  top: 88px;                 /* cola abaixo do topo */
+  align-self: flex-start;    /* garante altura só do conteúdo */
+}
+
+.side-card {
+  background: var(--paper);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-xl);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+/* lista de categorias na lateral */
+.cat-link {
+  display: block;
+  color: #333;
+  padding: .45rem .25rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  transition: background .15s ease;
+  &:hover { background: #f0f0f0; }
+}
+
+/* src/styles/layout/_sidebar.scss */
+.cat-link.active {
+  background: #eaeaea;
+  font-weight: 700;
+}
+
+
+/* títulos dos blocos de filtro */
+.filter-title {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* faixa preço */
+.price-input {
+  width: 100%;
+  border: 1px solid var(--stroke);
+  border-radius: .75rem;
+  padding: .5rem .75rem;
+  background: var(--paper);
+}
+
+/* radios/checkbox do bootstrap com toques finos */
+.form-check-input {
+  border-color: var(--stroke);
+  &:focus { box-shadow: none; border-color: var(--stroke); }
+}
+.form-check-label {
+  color: var(--ink);
+  .text-muted { color: var(--muted) !important; }
+}
+
+/* divisória suave entre seções */
+.side-card hr {
+  margin: 1rem 0;
+  opacity: 1;
+  border-color: var(--stroke);
+}
+
+/* spacing geral da coluna */
+@media (min-width: 992px) {
+  .sidebar { padding-right: .25rem; }
+}
+
+/* comportamento mobile:
+   - remove sticky
+   - deixa cartões “respirarem”
+*/
+@media (max-width: 991.98px) {
+  .sidebar { position: static; top: auto; }
+  .side-card { box-shadow: none; }
+}
+
+/* utilitário opcional p/ ver mais/ocultar longas listas */
+.sidebar-collapsible {
+  max-height: 260px;
+  overflow: hidden;
+  &.is-open { max-height: none; }
+}
+.sidebar-toggle {
+  display: inline-flex;
+  gap: .35rem;
+  align-items: center;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* área colapsável */
+.sidebar-collapsible {
+  max-height: 260px;       /* altura “fechada” */
+  overflow: hidden;
+  transition: max-height .25s ease;
+  &.is-open { max-height: 1000px; } /* abre; valor alto p/ acomodar a lista */
+}
+
+/* botão Ver mais */
+.sidebar-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  margin-top: .5rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+
+  .la-angle-down {
+    transition: transform .2s ease;
+  }
+  &[aria-expanded="true"] .la-angle-down {
+    transform: rotate(180deg);
+  }
+}
