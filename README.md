@@ -62,7 +62,7 @@ O site da **Casa Interiores** não é apenas um catálogo — é um **ambiente d
 
 ---
 
-<h2 id="tecnologias">🛠️ Tecnologias e Ferramentas</h2> <h5 id="inicio">🔝 Voltar ao início</h5>
+<h2 id="tecnologias">🛠️ Tecnologias e Ferramentas</h2>
 
 | Categoria | Tecnologia | Função |
 |------------|-------------|--------|
@@ -87,7 +87,7 @@ O site da **Casa Interiores** não é apenas um catálogo — é um **ambiente d
 ---
 [🔝 Voltar ao Sumário](#sumario)
 
-<h2 id="instalacao">⚙️ Instalação e Execução</h2> [🔝 Voltar ao Sumário](#-sumario--clique-no-topico-desejado-)
+<h2 id="instalacao">⚙️ Instalação e Execução</h2>
 
 
 ### 💻 Pré-requisitos
@@ -117,7 +117,7 @@ npm run build
 
 [🔝 Voltar ao Sumário](#sumario)
 
-<h2 id="estrutura">🗂️ Estrutura de Pastas</h2> [🔝 Voltar ao Sumário](#-sumario--clique-no-topico-desejado-)
+<h2 id="estrutura">🗂️ Estrutura de Pastas</h2>
 
 
 | 📁 Pasta / Arquivo | 🧩 Tipo | 🧠 Descrição |
@@ -183,6 +183,7 @@ npm run build
 🖼️ [Guia de Identidade Visual (PDF)](/docs/Guia_Identidade_Visual.pdf)
 
 ---
+[🔝 Voltar ao Sumário](#sumario)
 
 ### 🎨 Documentação de Cores (Root SCSS)
 
@@ -211,6 +212,8 @@ npm run build
 
 
 ---
+[🔝 Voltar ao Sumário](#sumario)
+
 <h2 id="documentos">🧾 Documentos Oficiais</h2>
 
 | Documento                         | Arquivo                                    | Descrição                          |
