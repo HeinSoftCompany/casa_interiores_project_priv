@@ -10,22 +10,22 @@
 ---
 
 ## 🔗 Sumário
-- [🧱 Cabeçalho e Identificação do Projeto](#🧱-cabeçalho-e-identificação-do-projeto)
-- [📖 Visão Geral e Objetivos](#📖-visão-geral-e-objetivos)
-- [🛠️ Tecnologias e Ferramentas](#🛠️-tecnologias-e-ferramentas)
-- [⚙️ Instalação e Execução](#⚙️-instalação-e-execução)
-- [🗂️ Estrutura de Pastas](#🗂️-estrutura-de-pastas)
-- [🎨 Identidade Visual](#🎨-identidade-visual)
-- [🧾 Documentos Oficiais](#🧾-documentos-oficiais)
-- [📦 Entregáveis e Resultado](#📦-entregáveis-e-resultado)
-- [📊 Análise de Performance](#📊-análise-de-performance)
-- [👤 Créditos e Contatos](#👤-créditos-e-contatos)
-- [📅 Roadmap de Desenvolvimento](#📅-roadmap-de-desenvolvimento)
-- [📈 Histórico de Versões (Changelog)](#📈-histórico-de-versões-changelog)
-- [⚖️ Direitos Autorais](#⚖️-direitos-autorais)
+- [🧱 Cabeçalho e Identificação do Projeto](#cabecalho)
+- [📖 Visão Geral e Objetivos](#visao)
+- [🛠️ Tecnologias e Ferramentas](#tecnologias)
+- [⚙️ Instalação e Execução](#instalacao)
+- [🗂️ Estrutura de Pastas](#estrutura)
+- [🎨 Identidade Visual](#identidade-visual)
+- [🧾 Documentos Oficiais](#documentos)
+- [📦 Entregáveis e Resultado](#entregaveis)
+- [📊 Análise de Performance](#performance)
+- [👤 Créditos e Contatos](#creditos)
+- [📅 Roadmap de Desenvolvimento](#roadmap)
+- [📈 Histórico de Versões (Changelog)](#changelog)
+- [⚖️ Direitos Autorais](#licenca)
 ---
 
-## 🧱 Cabeçalho e Identificação do Projeto(#🧱-cabeçalho-e-identificação-do-projeto)
+<h2 id="cabecalho">🧱 Cabeçalho e Identificação do Projeto</h2>
 
 **Cliente:** Casa Interiores  
 **Empresa Desenvolvedora:** HeinSoft Company  
@@ -38,7 +38,7 @@
 O projeto **Casa Interiores** foi desenvolvido pela **HeinSoft Company** com o objetivo de traduzir a essência do design rústico e contemporâneo da marca em uma presença digital elegante, funcional e de alto desempenho.  
 Cada detalhe foi planejado para refletir o estilo natural dos produtos, criar uma experiência fluida para o visitante e posicionar a marca como **referência regional em decoração e móveis personalizados.**
 
-## 📖 Visão Geral e Objetivos
+<h2 id="visao">📖 Visão Geral e Objetivos</h2>
 
 A **Casa Interiores** é uma marca dedicada à criação de ambientes acolhedores, com foco em móveis e decorações que unem **artesanato e design contemporâneo**.  
 A HeinSoft desenvolveu um **site institucional e catálogo digital** para representar fielmente o estilo e o valor estético da marca no ambiente online.
@@ -55,7 +55,7 @@ O site da **Casa Interiores** não é apenas um catálogo — é um **ambiente d
 
 ---
 
-## 🛠️ Tecnologias e Ferramentas
+<h2 id="tecnologias">🛠️ Tecnologias e Ferramentas</h2>
 
 | Categoria | Tecnologia | Função |
 |------------|-------------|--------|
@@ -79,7 +79,7 @@ O site da **Casa Interiores** não é apenas um catálogo — é um **ambiente d
 
 ---
 
-## ⚙️ Instalação e Execução
+<h2 id="instalacao">⚙️ Instalação e Execução</h2>
 
 ### 💻 Pré-requisitos
 - Node.js v20+  
@@ -106,7 +106,7 @@ npm run build
 ```
 ---
 
-## 🗂️ Estrutura de Pastas
+<h2 id="estrutura">🗂️ Estrutura de Pastas</h2>
 
 | 📁 Pasta / Arquivo | 🧩 Tipo | 🧠 Descrição |
 |---------------------|---------|---------------|
@@ -154,7 +154,7 @@ npm run build
 | └── `/versao_1.1` | 📁 Atualização | Versão revisada com melhorias de SEO e imagens. |
 
 ---
-## 🎨 Identidade Visual
+<h2 id="identidade-visual">🎨 Identidade Visual</h2>
 
 | Elemento | Padrão | Descrição |
 |----------|---------|------------|
@@ -196,7 +196,7 @@ npm run build
 
 
 ---
-## Documentos Oficiais
+<h2 id="documentos">🧾 Documentos Oficiais</h2>
 
 | Documento                         | Arquivo                                    | Descrição                          |
 | --------------------------------- | ------------------------------------------ | ---------------------------------- |
@@ -208,7 +208,8 @@ npm run build
 
 
 
-## 📦 Entregáveis e Resultado
+<h2 id="entregaveis">📦 Entregáveis e Resultado</h2>
+
 | Item            | Status | Descrição                                |
 | --------------- | ------ | ---------------------------------------- |
 | Site Responsivo | ✅      | Layout fluido e moderno                  |
@@ -221,7 +222,7 @@ npm run build
 - 📜 Verificação de Certificado: [ heinsoft.com.br/certificados/casa-interiores]( heinsoft.com.br/certificados/casa-interiores)
 
 ---
-## 📊 Análise de Performance
+<h2 id="performance">📊 Análise de Performance</h2>
 
 | Plataforma             | Pontuação | Métrica Principal | Data       |
 | ---------------------- | --------- | ----------------- | ---------- |
@@ -230,7 +231,8 @@ npm run build
 | **Lighthouse (Local)** | 95/100    | Performance Geral | 02/11/2025 |
 
 ---
-## 👤 Créditos e Contatos
+<h2 id="creditos">👤 Créditos e Contatos</h2>
+
 Desenvolvido por: HeinSoft Company - *Acesse:* [🌐 heinsoft.com.br](https://www.heinsoft.com.br/)
 
 - Email: 📧 contato@heinsoft.com.br
@@ -242,7 +244,7 @@ Desenvolvido por: HeinSoft Company - *Acesse:* [🌐 heinsoft.com.br](https://ww
 Responsável Técnico: *Pedro Henrique — CEO & Fundador*
 
 
-## 📅 Roadmap de Desenvolvimento
+<h2 id="roadmap">📅 Roadmap de Desenvolvimento</h2>
 
 | Fase                       | Descrição                                   | Status | Responsável       |
 | -------------------------- | ------------------------------------------- | ------ | ----------------- |
@@ -251,7 +253,7 @@ Responsável Técnico: *Pedro Henrique — CEO & Fundador*
 | Desenvolvimento Técnico    | Implementação e SEO inicial                 | ✅      | Pedro Henrique    |
 | Testes & Publicação        | QA, otimização e deploy                     | ✅      | Pedro Henrique    |
 
-## Histórico de Versões (Changelog)
+<h2 id="changelog">📈 Histórico de Versões (Changelog)</h2>
 
 | Versão     | Descrição                                              | Data     |
 | ---------- | ------------------------------------------------------ | -------- |
@@ -260,7 +262,7 @@ Responsável Técnico: *Pedro Henrique — CEO & Fundador*
 | **v1.2.0** | Atualização de Catálogo: novos produtos e AOS refinado | Dez/2025 |
 | **v1.3.0** | Revisão de conteúdo, SEO e auditoria GTmetrix (96%)    | Jan/2026 |
 
-## ⚖️ Direitos Autorais
+<h2 id="licenca">⚖️ Direitos Autorais</h2>
 
 © 2025 HeinSoft Company. Todos os direitos reservados.
 Reprodução, redistribuição ou uso comercial não autorizado é proibido.
