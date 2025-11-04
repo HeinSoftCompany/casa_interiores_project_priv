@@ -9,7 +9,7 @@
 
 ---
 
-## 🔗 Sumário - Clique no artigo desejado 🙂 (#inicio)
+## 🔗 Sumário - Clique no artigo desejado 🙂[Início](#inicio)
 - [🧱 Cabeçalho e Identificação do Projeto](#cabecalho)
 - [📖 Visão Geral e Objetivos](#visao)
 - [🛠️ Tecnologias e Ferramentas](#tecnologias)
@@ -55,7 +55,7 @@ O site da **Casa Interiores** não é apenas um catálogo — é um **ambiente d
 
 ---
 
-<h2 id="tecnologias">🛠️ Tecnologias e Ferramentas</h2> <h2 id="cabecalho">🪵 Voltar ao início</h2>
+<h2 id="tecnologias">🛠️ Tecnologias e Ferramentas</h2> - [🪵 Voltar ao início](#inicio)
 
 | Categoria | Tecnologia | Função |
 |------------|-------------|--------|
