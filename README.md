@@ -9,7 +9,7 @@
 
 ---
 
-## 🔗 Sumário - Clique no artigo desejado 🙂 (#inicio)
+## 🔗 Sumário - Clique no artigo desejado 🙂 [Início](#inicio)
 - [🧱 Cabeçalho e Identificação do Projeto](#cabecalho)
 - [📖 Visão Geral e Objetivos](#visao)
 - [🛠️ Tecnologias e Ferramentas](#tecnologias)
