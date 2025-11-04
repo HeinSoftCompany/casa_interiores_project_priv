@@ -55,7 +55,7 @@ O site da **Casa Interiores** não é apenas um catálogo — é um **ambiente d
 
 ---
 
-<h2 id="tecnologias">🛠️ Tecnologias e Ferramentas</h2> - [🪵 Voltar ao início](#inicio)
+<h2 id="tecnologias">🛠️ Tecnologias e Ferramentas</h2> [🔝 Voltar ao Sumário](#-sumario--clique-no-topico-desejado-)
 
 | Categoria | Tecnologia | Função |
 |------------|-------------|--------|
@@ -79,7 +79,8 @@ O site da **Casa Interiores** não é apenas um catálogo — é um **ambiente d
 
 ---
 
-<h2 id="instalacao">⚙️ Instalação e Execução</h2>
+<h2 id="instalacao">⚙️ Instalação e Execução</h2> [🔝 Voltar ao Sumário](#-sumario--clique-no-topico-desejado-)
+
 
 ### 💻 Pré-requisitos
 - Node.js v20+  
@@ -106,7 +107,8 @@ npm run build
 ```
 ---
 
-<h2 id="estrutura">🗂️ Estrutura de Pastas</h2>
+<h2 id="estrutura">🗂️ Estrutura de Pastas</h2> [🔝 Voltar ao Sumário](#-sumario--clique-no-topico-desejado-)
+
 
 | 📁 Pasta / Arquivo | 🧩 Tipo | 🧠 Descrição |
 |---------------------|---------|---------------|
