@@ -53,7 +53,7 @@ function updatePageTitle(cat) {
 }
 
 // =========================
-/* Categoria (preserva seu comportamento; usa flags para coexistir com filtro de texto) */
+// Categoria
 // =========================
 function applyCategory(cat) {
   currentCat = cat;
@@ -64,35 +64,28 @@ function applyCategory(cat) {
   const $grid = $('#grid');
   const $cols = $grid.find('[class*="col-"]');
 
-  // limpa flag de categoria
   $cols.removeClass('ci-hide-cat');
-
-  // aplica flag de categoria nos que não batem
   $grid.find('.product-card').each(function () {
     const c = $(this).data('cat');
     if (c !== cat) $(this).closest('[class*="col-"]').addClass('ci-hide-cat');
   });
 
-  // reavalia visibilidade considerando categoria + texto
   recomputeVisibility();
 
-  // scroll para o primeiro da categoria
   const $first = $grid.find(`.product-card[data-cat="${cat}"]`).first();
   if ($first.length) {
     const y = $first.offset().top - 80;
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
-  // mantém filtro de texto, se houver algo digitado
   const term = $('.search-input').val() || '';
   if (term.trim()) applyTextFilter(term);
 
-  // título dinâmico
   updatePageTitle(cat);
 }
 
 // =========================
-// Reset (limpa categoria; busca é reaplicada se houver)
+// Reset
 // =========================
 function resetHome() {
   currentCat = null;
@@ -107,12 +100,11 @@ function resetHome() {
   const term = $('.search-input').val() || '';
   if (term.trim()) applyTextFilter(term);
 
-  // título dinâmico
   updatePageTitle(null);
 }
 
 // =========================
-// Filtro de texto (flag separada para não conflitar com categoria)
+// Filtro de texto
 // =========================
 function applyTextFilter(termRaw) {
   const term = norm(termRaw);
@@ -121,45 +113,167 @@ function applyTextFilter(termRaw) {
   $grid.find('[class*="col-"]').each(function () {
     const $col = $(this);
     const $card = $col.find('.product-card');
-
     if (!term) {
-      // campo vazio → remove filtro de texto
       $col.removeClass('ci-hide-text');
       return;
     }
 
     const title = norm($card.find('.product-title').text());
     const matchesText = title.includes(term);
-
-    // aplica/limpa SOMENTE a flag de texto
     $col.toggleClass('ci-hide-text', !matchesText);
   });
 
-  // aplica d-none conforme flags
   recomputeVisibility();
 }
 
 // =========================
-// WhatsApp links (número ofuscado) — injeta <a> dentro da .pix
+// WhatsApp links (produtos)
 // =========================
 function setupWhatsAppLinks() {
-  // Número: 81 99320-1501 → 5581993201501 (ofuscado em partes)
   const PHONE = ['5581', '9932', '01501'].join('');
-
   $('#grid .product-card .pix').each(function () {
     const $pix = $(this);
     const name = $pix.closest('.product-card').find('.product-title').text().trim();
+    const url = new URL('https://wa.me/' + PHONE);
+    url.searchParams.set('text', `Olá! Tenho interesse no produto: ${name}. Pode me enviar mais detalhes?`);
+    $pix.html(`<a class="text-success-emphasis text-decoration-none" target="_blank" rel="noopener" href="${url}">Falar no whatsapp</a>`);
+  });
+}
+
+// =========================
+// Contato → WhatsApp
+// =========================
+function setupContactFormWhatsApp() {
+  const PHONE = ['5581', '9932', '01501'].join('');
+  const $form = $('.contact-form');
+  if ($form.length === 0) return;
+
+  $form.on('submit', function (e) {
+    e.preventDefault();
+    const fd = new FormData(this);
+    const first = (fd.get('firstName') || '').trim();
+    const last  = (fd.get('lastName')  || '').trim();
+    const msg   = (fd.get('message')   || '').trim();
+    const phone = (fd.get('phone')     || '').trim();
+
+    if (!first || !msg) {
+      alert('Por favor, preencha seu nome e a mensagem antes de enviar.');
+      return;
+    }
+
+    const fullName = [first, last].filter(Boolean).join(' ');
+    const text = `Sou o(a) ${fullName}!\n${phone ? `Telefone: ${phone}\n` : ''}\n${msg}\n\nMensagem enviada pelo site da Casa Interiores.`;
 
     const url = new URL('https://wa.me/' + PHONE);
-    url.searchParams.set(
-      'text',
-      `Olá! Tenho interesse no produto: ${name}. Pode me enviar mais detalhes?`
-    );
+    url.searchParams.set('text', text);
+    window.open(url.toString(), '_blank', 'noopener');
 
-    // Mantém a div .pix e injeta o link dentro (não remove classes/ids)
-    $pix.html(
-      `<a class="text-success-emphasis text-decoration-none" target="_blank" rel="noopener" href="${url.toString()}">Falar no whatsapp</a>`
-    );
+    const $btn = $(this).find('.contact-btn');
+    $btn.prop('disabled', true).text('Abrindo WhatsApp...');
+    setTimeout(() => $btn.prop('disabled', false).text('Enviar no WhatsApp'), 1500);
+  });
+}
+
+// =========================
+// Máscara de telefone
+// =========================
+function setupPhoneMask() {
+  const input = document.querySelector('input[name="phone"]');
+  if (!input) return;
+
+  input.addEventListener('input', (e) => {
+    let v = e.target.value.replace(/\D/g, '');
+    if (v.length > 11) v = v.substring(0, 11);
+    if (v.length > 6) {
+      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+    } else if (v.length > 2) {
+      v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+    } else if (v.length > 0) {
+      v = `(${v}`;
+    }
+    e.target.value = v;
+  });
+
+  input.addEventListener('keypress', (e) => {
+    if (!/[0-9]/.test(e.key)) e.preventDefault();
+  });
+
+  input.addEventListener('paste', (e) => {
+    const pasted = (e.clipboardData || window.clipboardData).getData('text');
+    if (/\D/.test(pasted)) e.preventDefault();
+  });
+}
+
+// =========================
+// SPA leve (sem reload)
+// =========================
+function enableSpaNav() {
+  const CACHE = new Map();
+
+  const valid = (href) => ['/','/sobre','/contato'].includes(href);
+
+  async function fetchPage(href) {
+    // corrige rotas /sobre → sobre.html
+    let path = href;
+    if (href === '/sobre') path = '/sobre.html';
+    if (href === '/contato') path = '/contato.html';
+    if (href === '/') path = '/index.html';
+
+    if (CACHE.has(path)) return CACHE.get(path);
+    const res = await fetch(path);
+    if (!res.ok) throw new Error('Falha ao carregar ' + path);
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    CACHE.set(path, doc);
+    return doc;
+  }
+
+  async function loadPage(href, push = true) {
+    try {
+      const doc = await fetchPage(href);
+      const newMain = doc.querySelector('main');
+      if (!newMain) return (window.location.href = href);
+      const currentMain = document.querySelector('main');
+
+      // Fade suave
+      currentMain.style.transition = 'opacity .25s ease';
+      currentMain.style.opacity = '0';
+      setTimeout(() => {
+        currentMain.replaceWith(newMain);
+        newMain.style.opacity = '0';
+        newMain.style.transition = 'opacity .25s ease';
+        requestAnimationFrame(() => (newMain.style.opacity = '1'));
+      }, 250);
+
+      document.title = doc.title || document.title;
+      if (push) history.pushState({ spa: true, href }, '', href);
+
+      setupContactFormWhatsApp();
+      setupPhoneMask();
+
+      // ativa nav
+      document.querySelectorAll('.cats-bar .nav-link').forEach((el) => el.classList.remove('active'));
+      const nav = document.querySelector(`.cats-bar .nav-link[href="${href}"]`);
+      if (nav) nav.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      console.error(err);
+      window.location.href = href;
+    }
+  }
+
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a || !valid(a.getAttribute('href'))) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === '_blank') return;
+    e.preventDefault();
+    loadPage(a.getAttribute('href'), true);
+  });
+
+  window.addEventListener('popstate', (e) => {
+    if (e.state && e.state.spa && e.state.href) {
+      loadPage(e.state.href, false);
+    }
   });
 }
 
@@ -167,22 +281,19 @@ function setupWhatsAppLinks() {
 // Boot
 // =========================
 document.addEventListener('DOMContentLoaded', () => {
-  // ano no footer
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  // Toggle "Ver mais"
+  // Sidebar toggle
   $(document).on('click', '.sidebar-toggle', function (e) {
     e.preventDefault();
     const $btn = $(this);
-    const targetId = $btn.attr('aria-controls'); // ex: "catList"
+    const targetId = $btn.attr('aria-controls');
     const $box = $('#' + targetId);
     const isOpen = $btn.attr('aria-expanded') === 'true';
-
     $btn.attr('aria-expanded', String(!isOpen));
     $box.toggleClass('is-open', !isOpen);
     $btn.find('span').text(!isOpen ? 'Ver menos' : 'Ver mais');
-
     if (!isOpen) {
       setTimeout(() => {
         const top = $btn.offset().top - 120;
@@ -191,18 +302,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Clique nas categorias (SEM reload) + fecha offcanvas no mobile
+  // Categoria
   $(document).on('click', '.cat-link', function (e) {
     const cat = $(this).data('cat');
     if (!cat) return;
     e.preventDefault();
-
     const url = new URL(window.location.href);
     url.searchParams.set('cat', cat);
     history.pushState({ cat }, '', url);
-
     applyCategory(cat);
-
     const offcanvasEl = document.getElementById('mobileFilters');
     if (offcanvasEl && window.bootstrap) {
       const off = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
@@ -210,7 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Logo e "Móveis" → reset
   $(document).on('click', '.reset-home', function (e) {
     e.preventDefault();
     const url = new URL(window.location.href);
@@ -219,54 +326,44 @@ document.addEventListener('DOMContentLoaded', () => {
     resetHome();
   });
 
-  // Voltar do navegador
   window.addEventListener('popstate', () => {
     const cat = getParam('cat');
     if (cat) applyCategory(cat);
     else resetHome();
-
     const term = $('.search-input').val() || '';
     applyTextFilter(term);
-
-    // garante título correto ao navegar
     updatePageTitle(cat || null);
   });
 
-  // Estado inicial: ?cat=...
   const initialCat = getParam('cat');
   if (initialCat) applyCategory(initialCat);
   else updatePageTitle(null);
-  recomputeVisibility(); // garante estado consistente
+  recomputeVisibility();
 
-  // Clona o sidebar pro offcanvas mobile
   const $desk = $('#sidebarDesktop nav').clone(true, true);
   $desk.find('#catList').attr('id', 'catListMobile');
   $desk.find('.sidebar-toggle').attr('aria-controls', 'catListMobile');
   $('#mobileFiltersBody').empty().append($desk);
 
-  // ===== Busca por texto =====
   const runSearch = debounce(() => {
     const term = $('.search-input').val() || '';
     applyTextFilter(term);
   }, 180);
 
-  // enquanto digita
   $(document).on('input', '.search-input', runSearch);
-
-  // enter no campo
   $(document).on('keydown', '.search-input', function (e) {
     if (e.key === 'Enter') {
       e.preventDefault();
       runSearch();
     }
   });
-
-  // clique na lupa
   $(document).on('click', '.search-wrap .btn', function (e) {
     e.preventDefault();
     runSearch();
   });
 
-  // ===== WhatsApp por produto =====
   setupWhatsAppLinks();
+  setupContactFormWhatsApp();
+  setupPhoneMask();
+  enableSpaNav();
 });
