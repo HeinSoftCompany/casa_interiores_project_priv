@@ -186,40 +186,45 @@
   </section>
 
 <!-- FOOTER (estilo limpo, como a referência) -->
-<footer class="footer-min footer-min--beige pt-5 pb-4">
+<footer class="footer-min py-5">
   <div class="container">
-    <div class="row g-4">
-
-      <div class="col-12 col-md-4">
-        <div class="logo h4">Casa <span class="span-logo">Interiores</span></div>
-        <p class="text-secondary">Móveis rústicos com elegância e durabilidade. Gravatá-PE.</p>
-        <ul class="list-unstyled text-secondary small">
+    <div class="row">
+      
+      <!-- Logo e informações -->
+      <div class="col-12 col-md-4 mb-3">
+        <div class="logo h4 mb-2">Casa <span class="span-logo">Interiores</span></div>
+        <p class="mb-3">
+          Móveis rústicos com elegância e durabilidade.
+        </p>
+        <ul class="list-unstyled small mb-0">
           <li><i class="la la-map-marker me-1"></i> R. Duarte Coelho, 94 – Prado, Gravatá-PE</li>
-          <li><i class="la la-whatsapp me-1"></i> (81) 99999-9999</li>
           <li><i class="la la-envelope-o me-1"></i> contato@casainteriores.com.br</li>
+          <li><i class="la la-whatsapp me-1"></i> (81) 99320-1501</li>
         </ul>
       </div>
 
-      <div class="col-6 col-md-2">
+      <!-- Navegação -->
+      <div class="col-6 col-md-2 mb-3">
         <h6 class="text-uppercase small mb-3">Navegação</h6>
-        <ul class="list-unstyled small">
-          <li><a href="/index.html">Móveis rústicos</a></li>
-          <li><a href="/sobre.html">Sobre</a></li>
-          <li><a href="/contato.html">Contato</a></li>
+        <ul class="nav flex-column small">
+          <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 text-body-secondary">Móveis rústicos</a></li>
+          <li class="nav-item mb-2"><a href="/sobre.html" class="nav-link p-0 text-body-secondary">Sobre</a></li>
+          <li class="nav-item mb-2"><a href="/contato.html" class="nav-link p-0 text-body-secondary">Contato</a></li>
         </ul>
       </div>
 
-      <div class="col-6 col-md-3">
+      <!-- Atendimento -->
+      <div class="col-6 col-md-2 mb-3">
         <h6 class="text-uppercase small mb-3">Atendimento</h6>
-        <ul class="list-unstyled small">
-          <li>Seg - Sáb, 8h às 18h</li>
-          <li>Retirada e entrega local</li>
-          <li>Garantia de 12 meses</li>
+        <ul class="nav flex-column small">
+          <li class="nav-item mb-2">Dom - Dom | 8h - 18h</li>
+          <li class="nav-item mb-2">Retirada e entrega local</li>
+          <li class="nav-item mb-2">Garantia de 12 meses</li>
         </ul>
       </div>
 
-      <!-- CTA aqui -->
-      <div class="col-12 col-md-3">
+      <!-- Localização -->
+      <div class="col-md-3 mb-3">
         <h6 class="text-uppercase small mb-3">Localização</h6>
         <a
           class="visit-store d-inline-flex align-items-center gap-2"
@@ -231,19 +236,18 @@
           <i class="la la-arrow-right arrow" aria-hidden="true"></i>
         </a>
       </div>
-
     </div>
 
     <hr class="my-4">
 
-    <div class="d-flex flex-column flex-md-row gap-2 justify-content-between small text-secondary">
-      <span>© 2025 Casa Interiores — Todos os direitos reservados.</span>
-      <span>Desenvolvido por HeinSoft</span>
-    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top small text-secondary">
+  <p class="mb-0">© <span id="year"></span> Casa Interiores — Todos os direitos reservados.</p>
+  <a href="https://heinsoft.com.br" target="_blank" class="text-decoration-none">
+    Desenvolvido por <span class="fw-semibold">HeinSoft Company</span>
+  </a>
+</div>
   </div>
 </footer>
-
-
 
   <!-- jQuery -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
