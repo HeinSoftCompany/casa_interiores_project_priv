@@ -162,7 +162,7 @@ function setupContactFormWhatsApp() {
     }
 
     const fullName = [first, last].filter(Boolean).join(' ');
-    const text = `Sou o(a) ${fullName}!\n${phone ? `Telefone: ${phone}\n` : ''}\n${msg}\n\nMensagem enviada pelo site da Casa Interiores.`;
+    const text = `Olá, Sou o(a) ${fullName}!\n${phone ? `Telefone: ${phone}\n` : ''}\n${msg}\n\nMensagem enviada pelo site da Casa Interiores.`;
 
     const url = new URL('https://wa.me/' + PHONE);
     url.searchParams.set('text', text);

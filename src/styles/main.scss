@@ -9,8 +9,10 @@
 @use './layout/offcanvas';
 @use './layout/images';
 @use './layout/contact';
+@use './layout/page-about';
 
 @use './components/product-card';
 @use './components/utilities';
 
 @use './pages/catalog';
+@use './pages/about';
