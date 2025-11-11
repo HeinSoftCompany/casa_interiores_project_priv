@@ -318,13 +318,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  $(document).on('click', '.reset-home', function (e) {
+  // listener atual da .reset-home:
+$(document).off('click', '.reset-home').on('click', '.reset-home', function (e) {
+  const path = window.location.pathname.replace(/\/+$/, '');
+  const onHome = path === '' || path === '/' || path.endsWith('/index.html');
+
+  if (onHome) {
+    // Estamos no index: só reseta o estado (como antes)
     e.preventDefault();
     const url = new URL(window.location.href);
     url.search = '';
     history.pushState({}, '', url);
     resetHome();
-  });
+  } else {
+    // Estamos em /sobre ou /contato: ir para a home
+    // (se o SPA não interceptar, o navegador carrega / normalmente)
+    e.preventDefault();
+    window.location.href = '/';
+  }
+});
 
   window.addEventListener('popstate', () => {
     const cat = getParam('cat');
