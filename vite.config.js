@@ -9,6 +9,7 @@ export default defineConfig({
         main: 'index.html',
         sobre: 'sobre.html',
         contato: 'contato.html',
+        politica: 'politica-e-privacidade.html',
       },
     },
   },
