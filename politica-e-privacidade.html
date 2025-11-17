@@ -83,6 +83,14 @@
       text-decoration: underline;
     }
 
+    .aside-a {
+      color: #444;
+    }
+
+    .aside-a:hover {
+      text-decoration: underline;
+    }
+
     @media(max-width: 992px){
       .toc {
         position: relative;
@@ -94,8 +102,8 @@
 </head>
 <body>
 
-      <!-- header/nav iguais -->
-<div class="search-wrap py-3">
+  <!-- header/nav iguais -->
+  <div class="search-wrap py-3">
     <div class="container">
       <div class="row g-3 align-items-center">
         <!-- LOGO -->
@@ -129,7 +137,21 @@
   <div class="container policy-container">
     <!-- GRID -->
     <div class="row g-5">
-      
+
+      <!-- BOTÃO MOBILE (hambúrguer) -->
+      <div class="col-12 d-lg-none mb-3">
+        <button
+          class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center gap-2"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#tocMobile"
+          aria-controls="tocMobile"
+        >
+          <i class="la la-bars"></i>
+          Conteúdo da página
+        </button>
+      </div>
+
       <!-- Left Column: Content -->
       <div class="col-lg-8">
 
@@ -223,7 +245,7 @@
         <h2 id="garantia">8. Garantia dos Produtos</h2>
 
         <p>
-          A Casa Interiores oferece **1 (um) ano de garantia** a partir da data de entrega do produto.
+          A Casa Interiores oferece <strong>1 (um) ano de garantia</strong> a partir da data de entrega do produto.
         </p>
 
         <p>
@@ -250,8 +272,8 @@
 
       </div>
 
-      <!-- Right Column: Table of Contents -->
-      <div class="col-lg-4">
+      <!-- Right Column: Table of Contents (DESKTOP APENAS) -->
+      <div class="col-lg-4 d-none d-lg-block">
         <div class="toc">
           <h6 class="text-uppercase small mb-3">Conteúdo</h6>
           <ul class="list-unstyled">
@@ -269,11 +291,28 @@
       </div>
 
     </div>
+
+    <!-- OFFCANVAS MOBILE DO TOC -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="tocMobile" aria-labelledby="tocMobileLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="tocMobileLabel">Conteúdo da página</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="#info-coletadas" data-bs-dismiss="offcanvas" class="aside-a">1. Informações coletadas</a></li>
+          <li><a href="#uso-dados" data-bs-dismiss="offcanvas" class="aside-a">2. Como utilizamos</a></li>
+          <li><a href="#compartilhamento" data-bs-dismiss="offcanvas" class="aside-a">3. Compartilhamento</a></li>
+          <li><a href="#cookies" data-bs-dismiss="offcanvas" class="aside-a">4. Cookies</a></li>
+          <li><a href="#seguranca" data-bs-dismiss="offcanvas" class="aside-a">5. Segurança</a></li>
+          <li><a href="#lgpd" data-bs-dismiss="offcanvas" class="aside-a">6. Direitos (LGPD)</a></li>
+          <li><a href="#politica-loja" data-bs-dismiss="offcanvas" class="aside-a">7. Política da Loja</a></li>
+          <li><a href="#garantia" data-bs-dismiss="offcanvas" class="aside-a">8. Garantia</a></li>
+          <li><a href="#contato" data-bs-dismiss="offcanvas" class="aside-a">9. Contato</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-
-
-
-
 
   <!-- FOOTER (copia igual ao index) -->
   <footer class="footer-min py-5">
@@ -343,9 +382,6 @@
       </div>
     </div>
   </footer>
-
-
-
 
   <!-- jQuery -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
