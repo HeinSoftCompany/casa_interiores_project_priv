@@ -205,6 +205,90 @@ function setupPhoneMask() {
 }
 
 // =========================
+// Aside de produto (medidas + descrição)
+// =========================
+
+function setupProductAside() {
+  const aside = document.getElementById('productAside');
+  if (!aside) return;
+
+  const imgEl      = aside.querySelector('#productAsideImage');
+  const titleEl    = aside.querySelector('#productAsideTitle');
+  const catEl      = aside.querySelector('#productAsideCategory');
+  const measuresEl = aside.querySelector('#productAsideMeasures');
+  const descEl     = aside.querySelector('#productAsideDescription');
+  const waEl       = aside.querySelector('#productAsideWhatsapp');
+  const backdrop   = aside.querySelector('.product-aside__backdrop');
+  const closeBtn   = aside.querySelector('.product-aside__close');
+
+  const PHONE = ['5581', '9932', '01501'].join('');
+
+  function renderMeasures(str) {
+    measuresEl.innerHTML = '';
+    if (!str) return;
+    // "Altura: 80cm|Largura: 120cm|Profundidade: 40cm"
+    str.split('|').forEach((item) => {
+      const txt = item.trim();
+      if (!txt) return;
+      const li = document.createElement('li');
+      li.textContent = txt;
+      measuresEl.appendChild(li);
+    });
+  }
+
+  function openFromCard(card) {
+    const $card = $(card);
+    const title = $card.find('.product-title').text().trim();
+    const cat   = $card.data('cat');
+    const $img  = $card.find('.product-media img');
+    const imgSrc = $img.attr('src');
+    const descData     = $card.data('desc');
+    const measuresData = $card.data('measures');
+
+    imgEl.src = imgSrc || '';
+    imgEl.alt = title || 'Produto';
+
+    titleEl.textContent = title || 'Produto';
+    catEl.textContent   = cat ? `Categoria: ${cat}` : '';
+
+    renderMeasures(measuresData);
+
+    descEl.textContent =
+      descData ||
+      'Produto em madeira de alta qualidade, feito sob medida. Entre em contato para personalizar medidas, acabamento e prazo.';
+
+    const url = new URL('https://wa.me/' + PHONE);
+    url.searchParams.set('text', `Olá! Tenho interesse no produto: ${title}. Pode me enviar mais detalhes?`);
+    waEl.href = url.toString();
+
+    aside.classList.add('is-open');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeAside() {
+    aside.classList.remove('is-open');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  // Clique na imagem abre o aside
+  $(document).on('click', '#grid .product-media img', function (e) {
+    e.preventDefault();
+    const card = $(this).closest('.product-card');
+    if (!card.length) return;
+    openFromCard(card);
+  });
+
+  // Fechar: fundo, botão e ESC
+  backdrop.addEventListener('click', closeAside);
+  closeBtn.addEventListener('click', closeAside);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && aside.classList.contains('is-open')) {
+      closeAside();
+    }
+  });
+}
+
+// =========================
 // SPA leve (sem reload)
 // =========================
 function enableSpaNav() {
@@ -374,8 +458,9 @@ $(document).off('click', '.reset-home').on('click', '.reset-home', function (e) 
     runSearch();
   });
 
-  setupWhatsAppLinks();
+    setupWhatsAppLinks();
   setupContactFormWhatsApp();
   setupPhoneMask();
   enableSpaNav();
+  setupProductAside();
 });

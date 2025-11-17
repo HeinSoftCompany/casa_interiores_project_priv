@@ -55,15 +55,14 @@
 
     <!-- Categories Bar -->
     <div class="cats-bar">
-  <div class="container">
-    <nav class="nav gap-2 overflow-auto flex-nowrap justify-content-center justify-content-md-end" aria-label="Navegação de seções">
-      <a class="nav-link py-3 px-2 px-md-3" href="/index.html">Móveis rústicos</a>
-      <a class="nav-link py-3 px-2 px-md-3" href="/sobre.html">Sobre</a>
-      <a class="nav-link py-3 px-2 px-md-3" href="/contato.html">Contato</a>
-    </nav>
-  </div>
-</div>
-
+      <div class="container">
+        <nav class="nav gap-2 overflow-auto flex-nowrap justify-content-center justify-content-md-end" aria-label="Navegação de seções">
+          <a class="nav-link py-3 px-2 px-md-3" href="/index.html">Móveis rústicos</a>
+          <a class="nav-link py-3 px-2 px-md-3" href="/sobre.html">Sobre</a>
+          <a class="nav-link py-3 px-2 px-md-3" href="/contato.html">Contato</a>
+        </nav>
+      </div>
+    </div>
 
     <!-- Content -->
     <main class="py-4">
@@ -140,7 +139,12 @@
             <div class="row g-3" id="grid">
               <!-- Produto 1 -->
               <div class="col-6 col-md-4">
-                <article class="product-card position-relative p-2" data-cat="aparadores">
+                <article
+                  class="product-card position-relative p-2"
+                  data-cat="aparadores"
+                  data-measures="Altura: 80cm|Largura: 140cm|Profundidade: 40cm"
+                  data-desc="Aparadeira em madeira de reflorestamento, ideal para salas e áreas gourmet. Produção artesanal e sob medida."
+                >
                   <button class="wishlist"><i class="la la-heart-o"></i></button>
                   <div class="product-media rounded-2xl">
                     <img src="/assets/Aparadeira.png" class="img-fluid w-75" alt="Produto" loading="lazy" decoding="async"/>
@@ -468,81 +472,125 @@
       </div>
     </main>
 
+    <!-- ASIDE DE DETALHES DO PRODUTO -->
+    <aside id="productAside" class="product-aside" aria-hidden="true">
+      <div class="product-aside__backdrop"></div>
+
+      <div class="product-aside__panel container">
+        <button class="product-aside__close" type="button" aria-label="Fechar detalhes">
+          <i class="la la-times"></i>
+        </button>
+
+        <div class="row g-4">
+          <div class="col-12 col-lg-5">
+            <div class="product-aside__image text-center">
+              <img src="" alt="" id="productAsideImage" class="img-fluid rounded-3">
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-7">
+            <div class="product-aside__content">
+              <h2 class="h4 mb-2" id="productAsideTitle"></h2>
+
+              <p class="text-muted small mb-3" id="productAsideCategory"></p>
+
+              <div class="mb-3">
+                <h3 class="h6 mb-2">Medidas</h3>
+                <ul class="list-unstyled small mb-0" id="productAsideMeasures">
+                  <!-- preenchido via JS -->
+                </ul>
+              </div>
+
+              <div class="mt-3">
+                <h3 class="h6 mb-2">Descrição</h3>
+                <p class="small mb-3" id="productAsideDescription"></p>
+              </div>
+
+              <a href="#" target="_blank" rel="noopener"
+                class="btn btn-success btn-sm px-4" id="productAsideWhatsapp">
+                Falar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
     <footer class="footer-min py-5">
-  <div class="container">
-    <div class="row">
-      
-      <!-- Logo e informações -->
-      <div class="col-12 col-md-4 mb-3">
-        <div class="logo h4 mb-2">Casa <span class="span-logo">Interiores</span></div>
-        <p class="mb-3">
-          Móveis rústicos com elegância e durabilidade.
-        </p>
-        <ul class="list-unstyled small mb-0">
-          <li><i class="la la-map-marker me-1"></i> R. Duarte Coelho, 94 – Prado, Gravatá-PE</li>
-          <li><i class="la la-envelope-o me-1"></i> contato@casainteriores.com.br</li>
-          <li><i class="la la-whatsapp me-1"></i> (81) 99320-1501</li>
-        </ul>
-      </div>
+      <div class="container">
+        <div class="row">
+          
+          <!-- Logo e informações -->
+          <div class="col-12 col-md-4 mb-3">
+            <div class="logo h4 mb-2">Casa <span class="span-logo">Interiores</span></div>
+            <p class="mb-3">
+              Móveis rústicos com elegância e durabilidade.
+            </p>
+            <ul class="list-unstyled small mb-0">
+              <li><i class="la la-map-marker me-1"></i> R. Duarte Coelho, 94 – Prado, Gravatá-PE</li>
+              <li><i class="la la-envelope-o me-1"></i> contato@casainteriores.com.br</li>
+              <li><i class="la la-whatsapp me-1"></i> (81) 99320-1501</li>
+            </ul>
+          </div>
 
-      <!-- Navegação -->
-      <div class="col-6 col-md-2 mb-3">
-        <h6 class="text-uppercase small mb-3">Navegação</h6>
-        <ul class="nav flex-column small">
-          <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 text-body-secondary">Móveis rústicos</a></li>
-          <li class="nav-item mb-2"><a href="/sobre.html" class="nav-link p-0 text-body-secondary">Sobre</a></li>
-          <li class="nav-item mb-2"><a href="/contato.html" class="nav-link p-0 text-body-secondary">Contato</a></li>
-        </ul>
-      </div>
+          <!-- Navegação -->
+          <div class="col-6 col-md-2 mb-3">
+            <h6 class="text-uppercase small mb-3">Navegação</h6>
+            <ul class="nav flex-column small">
+              <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 text-body-secondary">Móveis rústicos</a></li>
+              <li class="nav-item mb-2"><a href="/sobre.html" class="nav-link p-0 text-body-secondary">Sobre</a></li>
+              <li class="nav-item mb-2"><a href="/contato.html" class="nav-link p-0 text-body-secondary">Contato</a></li>
+            </ul>
+          </div>
 
-      <!-- Atendimento -->
-      <div class="col-6 col-md-2 mb-3">
-        <h6 class="text-uppercase small mb-3">Atendimento</h6>
-        <ul class="nav flex-column small">
-          <li class="nav-item mb-2">Dom - Dom | 8h - 18h</li>
-          <li class="nav-item mb-2">Retirada e entrega local</li>
-          <li class="nav-item mb-2">
-            <a href="/politica-e-privacidade.html" class="nav-link p-0 text-body-secondary politic">
-              Política e privacidade
+          <!-- Atendimento -->
+          <div class="col-6 col-md-2 mb-3">
+            <h6 class="text-uppercase small mb-3">Atendimento</h6>
+            <ul class="nav flex-column small">
+              <li class="nav-item mb-2">Dom - Dom | 8h - 18h</li>
+              <li class="nav-item mb-2">Retirada e entrega local</li>
+              <li class="nav-item mb-2">
+                <a href="/politica-e-privacidade.html" class="nav-link p-0 text-body-secondary politic">
+                  Política e privacidade
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Localização -->
+          <div class="col-md-3 mb-3">
+            <h6 class="text-uppercase small mb-3">Localização</h6>
+            <a
+              class="visit-store d-inline-flex align-items-center gap-2"
+              href="https://maps.app.goo.gl/nZnCjvmEZaw3ZuUj8"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="label">Visite nossa loja</span>
+              <i class="la la-arrow-right arrow" aria-hidden="true"></i>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top small text-secondary">
+          <p class="mb-0">© <span id="year"></span> Casa Interiores — Todos os direitos reservados.</p>
+          <a href="https://heinsoft.com.br" target="_blank" class="text-decoration-none">
+            Desenvolvido por <span class="fw-semibold">HeinSoft Company</span>
+          </a>
+        </div>
       </div>
+    </footer>
 
-      <!-- Localização -->
-      <div class="col-md-3 mb-3">
-        <h6 class="text-uppercase small mb-3">Localização</h6>
-        <a
-          class="visit-store d-inline-flex align-items-center gap-2"
-          href="https://maps.app.goo.gl/nZnCjvmEZaw3ZuUj8"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="label">Visite nossa loja</span>
-          <i class="la la-arrow-right arrow" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
+    <!-- jQuery (precisa vir antes do main.js se você usa $ no main) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
 
-    <hr class="my-4">
+    <!-- Bootstrap bundle (opcional se já usa) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top small text-secondary">
-  <p class="mb-0">© <span id="year"></span> Casa Interiores — Todos os direitos reservados.</p>
-  <a href="https://heinsoft.com.br" target="_blank" class="text-decoration-none">
-    Desenvolvido por <span class="fw-semibold">HeinSoft Company</span>
-  </a>
-</div>
-  </div>
-</footer>
-
-   <!-- jQuery (precisa vir antes do main.js se você usa $ no main) -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
-
-<!-- Bootstrap bundle (opcional se já usa) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-<!-- Vite entry -->
-<script type="module" src="/src/main.js"></script>
+    <!-- Vite entry -->
+    <script type="module" src="/src/main.js"></script>
 
   </body>
 </html>
