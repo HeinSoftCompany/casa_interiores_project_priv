@@ -207,7 +207,6 @@ function setupPhoneMask() {
 // =========================
 // Aside de produto (medidas + descrição)
 // =========================
-
 function setupProductAside() {
   const aside = document.getElementById('productAside');
   if (!aside) return;
@@ -273,6 +272,15 @@ function setupProductAside() {
   // Clique na imagem abre o aside
   $(document).on('click', '#grid .product-media img', function (e) {
     e.preventDefault();
+    const card = $(this).closest('.product-card');
+    if (!card.length) return;
+    openFromCard(card);
+  });
+
+  // Clique no coração também abre o aside
+  $(document).on('click', '#grid .wishlist', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
     const card = $(this).closest('.product-card');
     if (!card.length) return;
     openFromCard(card);
@@ -403,24 +411,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // listener atual da .reset-home:
-$(document).off('click', '.reset-home').on('click', '.reset-home', function (e) {
-  const path = window.location.pathname.replace(/\/+$/, '');
-  const onHome = path === '' || path === '/' || path.endsWith('/index.html');
+  $(document).off('click', '.reset-home').on('click', '.reset-home', function (e) {
+    const path = window.location.pathname.replace(/\/+$/, '');
+    const onHome = path === '' || path === '/' || path.endsWith('/index.html');
 
-  if (onHome) {
-    // Estamos no index: só reseta o estado (como antes)
-    e.preventDefault();
-    const url = new URL(window.location.href);
-    url.search = '';
-    history.pushState({}, '', url);
-    resetHome();
-  } else {
-    // Estamos em /sobre ou /contato: ir para a home
-    // (se o SPA não interceptar, o navegador carrega / normalmente)
-    e.preventDefault();
-    window.location.href = '/';
-  }
-});
+    if (onHome) {
+      // Estamos no index: só reseta o estado (como antes)
+      e.preventDefault();
+      const url = new URL(window.location.href);
+      url.search = '';
+      history.pushState({}, '', url);
+      resetHome();
+    } else {
+      // Estamos em /sobre ou /contato: ir para a home
+      // (se o SPA não interceptar, o navegador carrega / normalmente)
+      e.preventDefault();
+      window.location.href = '/';
+    }
+  });
 
   window.addEventListener('popstate', () => {
     const cat = getParam('cat');
@@ -458,7 +466,7 @@ $(document).off('click', '.reset-home').on('click', '.reset-home', function (e) 
     runSearch();
   });
 
-    setupWhatsAppLinks();
+  setupWhatsAppLinks();
   setupContactFormWhatsApp();
   setupPhoneMask();
   enableSpaNav();
