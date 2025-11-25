@@ -24,7 +24,23 @@
 
   .product-title { font-weight:600; line-height:1.35; }
   .rating i { color:var(--rating); }
-  .price { font-weight:700; }
-  .pix { color:var(--muted); font-size:.95rem; }
   .whatsapp { color: var(--whatsapp); }
+  .price {
+  color: var(--gray);
+  font-size: .85rem;
+  font-weight: 400;
+  display: block;
+  text-align: right;
+  margin-top: .25rem;
+}
+
+/* 💻 Desktop: modelo no canto inferior direito */
+@media (min-width: 576px) {
+  .price {
+    position: absolute;
+    right: .75rem;
+    bottom: .75rem;
+    margin: 0;
+  }
+}
 }
